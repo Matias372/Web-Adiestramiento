@@ -1,5 +1,4 @@
 <?php
-// Conectar a la base de datos (debes tener tus credenciales y configuraciones aquí)
 require_once('Conexion.php');
 $conexion = new Conexion();
 $conn = $conexion->conn;
@@ -8,37 +7,57 @@ ini_set('display_errors', 0); // Desactivar la visualización de errores
 ini_set('log_errors', 1); // Activar el registro de errores
 error_reporting(E_ALL);
 
+// Función para validar y guardar la imagen
 function guardarImagen() {
-    // Verifica si la imagen fue cambiada
     if ($_POST['imagen'] == "SinCambio") {
         return $_POST['tmp-imagen'];
     }
 
     // Directorio donde se guardará la imagen
     $directorio = '../Resources/Img/Cursos/';
+    
+    // Verificar que el archivo es una imagen
+    $check = getimagesize($_FILES['imagen']['tmp_name']);
+    if ($check === false) {
+        throw new Exception('El archivo subido no es una imagen.');
+    }
+
+    // Limitar el tamaño del archivo (por ejemplo, a 5MB)
+    if ($_FILES['imagen']['size'] > 5000000) {
+        throw new Exception('El archivo es demasiado grande.');
+    }
+
+    // Extensiones permitidas
+    $extensionesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+    $extension = strtolower(pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION));
+    if (!in_array($extension, $extensionesPermitidas)) {
+        throw new Exception('Tipo de archivo no permitido. Solo se permiten JPG, JPEG, PNG y GIF.');
+    }
+
     // Obtener nombre y extensión del archivo
-    $nombreCurso = $_POST['nombre'];
+    $nombreCurso = preg_replace('/[^a-zA-Z0-9_-]/', '', $_POST['nombre']);
     $nombreArchivo = $nombreCurso . '_IMG';
-    $extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
+    
     // Nombre completo del archivo con extensión
     $nombreCompleto = $nombreArchivo . '.' . $extension;
+    
     // Ruta completa donde se guardará la imagen
     $rutaCompleta = $directorio . $nombreCompleto;
 
     // Eliminar la imagen vieja si existe
-    if ($_POST['tmp-imagen'] && file_exists($_POST['tmp-imagen'])) {
+    if (!empty($_POST['tmp-imagen']) && file_exists($_POST['tmp-imagen'])) {
         unlink($_POST['tmp-imagen']);
     }
 
     // Guardar la imagen en el servidor
     if (move_uploaded_file($_FILES['imagen']['tmp_name'], $rutaCompleta)) {
-        // Devolver la URL de la imagen para almacenar en la base de datos
         return $rutaCompleta;
     } else {
         throw new Exception('Error al guardar la imagen.');
     }
 }
 
+// Función para guardar los datos en la base de datos
 function guardarDatos($urlImagen) {
     global $conn;
 
@@ -71,7 +90,7 @@ try {
     $urlImagen = "SinCambio";
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] == 0) {
         $urlImagen = guardarImagen();
-    }else{
+    } else {
         $urlImagen = $_POST['tmp-imagen'];
     }
 

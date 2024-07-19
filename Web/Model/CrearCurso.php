@@ -2,20 +2,38 @@
 include 'Conexion.php'; // Asegúrate de ajustar la ruta según sea necesario
 $conexion = new Conexion();
 $conn = $conexion->conn;
-// Mostrar errores para depuración
+
+// Mostrar errores para depuración (puedes desactivar esto en producción)
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-// Función para guardar la imagen y devolver la URL
+// Función para validar y guardar la imagen
 function guardarImagen() {
     // Directorio donde se guardará la imagen
     $directorio = '../Resources/Img/Cursos/';
     
+    // Verificar que el archivo es una imagen
+    $check = getimagesize($_FILES['imagen']['tmp_name']);
+    if ($check === false) {
+        throw new Exception('El archivo subido no es una imagen.');
+    }
+
+    // Limitar el tamaño del archivo (por ejemplo, a 5MB)
+    if ($_FILES['imagen']['size'] > 5000000) {
+        throw new Exception('El archivo es demasiado grande.');
+    }
+
+    // Extensiones permitidas
+    $extensionesPermitidas = ['jpg', 'jpeg', 'png', 'gif'];
+    $extension = strtolower(pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION));
+    if (!in_array($extension, $extensionesPermitidas)) {
+        throw new Exception('Tipo de archivo no permitido. Solo se permiten JPG, JPEG, PNG y GIF.');
+    }
+
     // Obtener nombre y extensión del archivo
-    $nombreCurso = $_POST['nombre'];
+    $nombreCurso = preg_replace('/[^a-zA-Z0-9_-]/', '', $_POST['nombre']);
     $nombreArchivo = $nombreCurso . '_IMG';
-    $extension = pathinfo($_FILES['imagen']['name'], PATHINFO_EXTENSION);
     
     // Nombre completo del archivo con extensión
     $nombreCompleto = $nombreArchivo . '.' . $extension;
@@ -66,17 +84,20 @@ function guardarDatos($urlImagen) {
 
 // Lógica principal para procesar el formulario
 try {
-    if (!isset($_FILES['imagen'])) {
-        throw new Exception('No se ha recibido la imagen.');
-    }
-    
-    // Guardar imagen y obtener la URL
-    $urlImagen = guardarImagen();
-    
-    // Guardar datos en la base de datos usando la URL de la imagen
-    guardarDatos($urlImagen);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (!isset($_FILES['imagen'])) {
+            throw new Exception('No se ha recibido la imagen.');
+        }
 
+        // Validar y guardar imagen
+        $urlImagen = guardarImagen();
+
+        // Validar y guardar datos en la base de datos usando la URL de la imagen
+        guardarDatos($urlImagen);
+    } else {
+        throw new Exception('Método de solicitud no permitido.');
+    }
 } catch (Exception $e) {
-    echo 'Error: ' . $e->getMessage();
+    echo json_encode(['error' => 'Error: ' . $e->getMessage()]);
 }
 ?>

@@ -1,0 +1,46 @@
+/* css/components/header.css */
+/* Solo estilos del header - actualizados con la paleta */
+
+:root {
+    /* Variables específicas del header si necesitas */
+    --header-bg: #ffffff;
+    --header-border: #e9ecef;
+    --header-text: #212529;
+    --header-primary: #3a86ff;
+}
+
+.main-header {
+    background-color: var(--header-bg) !important;
+    border-bottom: 1px solid var(--header-border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: var(--header-primary) !important;
+    font-weight: 800;
+}
+
+.nav-link {
+    color: var(--header-text) !important;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--header-primary) !important;
+}
+
+.nav-cta {
+    background-color: var(--header-primary);
+    color: white !important;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem !important;
+    transition: all 0.3s ease;
+}
+
+.nav-cta:hover {
+    background-color: #2667cc;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(58, 134, 255, 0.3);
+}

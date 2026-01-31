@@ -1,0 +1,91 @@
+/* css/main.css - VARIABLES GLOBALES Y BASE */
+
+/* ===== PALETA DE COLORES GLOBAL ===== */
+:root {
+    /* Colores principales (basados en tus imágenes) */
+    --color-primary: #3a86ff;           /* Azul botones/acentos */
+    --color-primary-dark: #2667cc;      /* Azul hover */
+    --color-primary-light: #e7f1ff;     /* Fondo azul claro */
+    
+    /* Colores de fondo */
+    --color-bg-light: #f8f9fa;          /* Fondo gris claro */
+    --color-bg-white: #ffffff;          /* Fondo blanco */
+    
+    /* Colores de texto */
+    --color-text-dark: #212529;         /* Texto principal */
+    --color-text-gray: #6c757d;         /* Texto secundario */
+    --color-text-light: #adb5bd;        /* Texto claro */
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== ESTILOS BASE ===== */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--color-text-dark);
+    background-color: var(--color-bg-white);
+    padding-top: 80px; /* Para header fijo */
+}
+
+/* ===== UTILIDADES DE COLOR ===== */
+.bg-section-light {
+    background-color: var(--color-bg-light) !important;
+}
+
+.bg-section-white {
+    background-color: var(--color-bg-white) !important;
+}
+
+/* ===== BOTONES GLOBALES ===== */
+.btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    border-radius: 50px;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(58, 134, 255, 0.4);
+}
+
+/* ===== TIPOGRAFÍA ===== */
+h1, h2, h3, .display-1, .display-2, .display-3, .display-4 {
+    color: var(--color-text-dark);
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.text-muted {
+    color: var(--color-text-gray) !important;
+}
+
+/* ===== TARJETAS BASE ===== */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== ENLACES ===== */
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}

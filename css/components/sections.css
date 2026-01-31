@@ -1,0 +1,98 @@
+/* css/components/sections.css */
+/* Variables de color para secciones */
+
+:root {
+    /* Colores principales */
+    --color-primary: #3a86ff;
+    --color-primary-dark: #2667cc;
+    --color-primary-light: #e7f1ff;
+    
+    /* Colores de fondo */
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    
+    /* Colores de texto */
+    --text-dark: #212529;
+    --text-gray: #6c757d;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== CLASES DE FONDO ===== */
+.bg-section-light {
+    background-color: var(--bg-light) !important;
+}
+
+.bg-section-white {
+    background-color: var(--bg-white) !important;
+}
+
+/* ===== ESTILOS COMUNES PARA TODAS LAS SECCIONES ===== */
+.team-section,
+.classes-section,
+.modalities-section,
+.reviews-section,
+.contact-section {
+    color: var(--text-dark);
+}
+
+/* Títulos de sección */
+.team-section h2,
+.classes-section h2,
+.modalities-section h2,
+.reviews-section h2,
+.contact-section h2 {
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Texto secundario */
+.team-section .lead,
+.classes-section .lead,
+.modalities-section .lead,
+.reviews-section .lead,
+.contact-section .lead {
+    color: var(--text-gray);
+}
+
+/* ===== TARJETAS ===== */
+.team-section .card,
+.classes-section .card,
+.modalities-section .card,
+.reviews-section .card,
+.contact-section .card {
+    background-color: var(--bg-white);
+    border: none;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+}
+
+.team-section .card:hover,
+.classes-section .card:hover,
+.modalities-section .card:hover,
+.reviews-section .card:hover,
+.contact-section .card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ===== BOTONES EN SECCIONES ===== */
+.team-section .btn-primary,
+.classes-section .btn-primary,
+.modalities-section .btn-primary,
+.reviews-section .btn-primary,
+.contact-section .btn-primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.team-section .btn-primary:hover,
+.classes-section .btn-primary:hover,
+.modalities-section .btn-primary:hover,
+.reviews-section .btn-primary:hover,
+.contact-section .btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}

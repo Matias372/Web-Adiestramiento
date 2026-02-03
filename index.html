@@ -2,46 +2,109 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Básico -->
-    <title>Perronautas | Educación Canina Profesional | Entrenamiento para Perros</title>
-    <meta name="description" content="Entrenamiento canino profesional con métodos basados en ciencia. Clases online y presenciales. Transforma la relación con tu perro.">
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts: Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Nuestros estilos -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components/hero.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="css/components/sections.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
-</head>
-<body>
-    <!-- Los componentes se insertarán aquí dinámicamente -->
-    <div id="app">
-        <div id="header-container"></div>
-         <main>
-            <div id="hero-container"></div>
-            <div id="team-container"></div>      <!-- Conócenos -->
-            <div id="classes-container"></div>    <!-- Clases -->
-            <div id="modalities-container"></div> <!-- Modalidades -->
-            <div id="reviews-container"></div>    <!-- Reseñas -->
-            <div id="contact-container"></div>    <!-- Contacto (nuevo) -->
-        </main>
-        <div id="footer-container"></div>
-    </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap JS Bundle (con Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Nuestro JavaScript modular -->
-    <script type="module" src="js/main.js"></script>
+<title>Adiestramiento | Educación Canina Profesional en Buenos Aires y Mendoza</title>
+
+<meta name="description"
+  content="Educación canina profesional con métodos basados en ciencia y empatía. Clases presenciales en Buenos Aires y Mendoza, y modalidad online para toda Latinoamérica.">
+
+<meta name="robots" content="index, follow">
+
+<link rel="canonical" href="https://Adiestramiento.com/">
+
+<!-- Idioma -->
+<meta http-equiv="content-language" content="es-AR">
+
+<!-- Theme (mobile) -->
+<meta name="theme-color" content="#46C1CD">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Adiestramiento">
+<meta property="og:title" content="Adiestramiento | Educación Canina Profesional">
+<meta property="og:description"
+  content="Entrenamiento canino profesional con enfoque positivo. Clases presenciales y online.">
+<meta property="og:url" content="https://Adiestramiento.com/">
+<meta property="og:image" content="https://Adiestramiento.com/assets/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adiestramiento | Educación Canina Profesional">
+<meta name="twitter:description"
+  content="Educación canina basada en ciencia y empatía. Clases presenciales y online.">
+<meta name="twitter:image" content="https://Adiestramiento.com/assets/images/og-image.jpg">
+
+<!-- Schema.org -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Adiestramiento",
+  "url": "https://Adiestramiento.com",
+  "description": "Educación canina profesional con métodos basados en ciencia y empatía",
+  "areaServed": ["Argentina", "Latinoamérica"],
+  "sameAs": [
+    "https://instagram.com/Adiestramiento",
+    "https://facebook.com/Adiestramiento",
+    "https://tiktok.com/@Adiestramiento"
+  ]
+}
+</script>
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+  rel="stylesheet">
+
+<!-- Bootstrap -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  rel="stylesheet">
+
+<!-- Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="css/main.css">
+
+<!-- Favicon -->
+<link rel="icon"
+  href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐕</text></svg>">
+
+</head>
+
+<body>
+  <header id="header"></header>
+
+  <main>
+    <!-- Estas secciones las vamos a modularizar después -->
+    <!-- Por ahora las dejamos vacías o con placeholders -->
+    <div id="hero-container"></div>
+    <div id="conocenos-container"></div>
+    <div id="clases-container"></div>
+    <div id="modalidades-container"></div>
+    <div id="reseñas-container"></div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <a class="whatsapp-float" href="..." target="_blank" aria-label="WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
+
+  <!-- Loader de parciales -->
+  <script src="js/load-partials.js"></script>
+
+  <!-- JS propio -->
+  <script src="js/reseñas-slider.js"></script>
 </body>
 </html>

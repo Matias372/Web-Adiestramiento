@@ -1,91 +1,521 @@
-/* css/main.css - VARIABLES GLOBALES Y BASE */
-
-/* ===== PALETA DE COLORES GLOBAL ===== */
-:root {
-    /* Colores principales (basados en tus imágenes) */
-    --color-primary: #3a86ff;           /* Azul botones/acentos */
-    --color-primary-dark: #2667cc;      /* Azul hover */
-    --color-primary-light: #e7f1ff;     /* Fondo azul claro */
-    
-    /* Colores de fondo */
-    --color-bg-light: #f8f9fa;          /* Fondo gris claro */
-    --color-bg-white: #ffffff;          /* Fondo blanco */
-    
-    /* Colores de texto */
-    --color-text-dark: #212529;         /* Texto principal */
-    --color-text-gray: #6c757d;         /* Texto secundario */
-    --color-text-light: #adb5bd;        /* Texto claro */
-    
-    /* Sombras */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* ===== ESTILOS BASE ===== */
+/* =============== BASE =============== */
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    color: var(--color-text-dark);
-    background-color: var(--color-bg-white);
-    padding-top: 80px; /* Para header fijo */
+    background-color: #F6F9F2;
 }
 
-/* ===== UTILIDADES DE COLOR ===== */
-.bg-section-light {
-    background-color: var(--color-bg-light) !important;
+/* =============== HEADER =============== */
+.navbar {
+    background-color: #F6F9F2;
+    border-bottom: 4px solid #46C1CD;
+    padding: 5px 0;
 }
 
-.bg-section-white {
-    background-color: var(--color-bg-white) !important;
+.navbar a img {
+    height: 70px;
 }
 
-/* ===== BOTONES GLOBALES ===== */
-.btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    border-radius: 50px;
-    font-weight: 600;
-    padding: 0.75rem 2rem;
-    transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary-dark);
-    border-color: var(--color-primary-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(58, 134, 255, 0.4);
-}
-
-/* ===== TIPOGRAFÍA ===== */
-h1, h2, h3, .display-1, .display-2, .display-3, .display-4 {
-    color: var(--color-text-dark);
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-.text-muted {
-    color: var(--color-text-gray) !important;
-}
-
-/* ===== TARJETAS BASE ===== */
-.card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s ease;
-}
-
-.card:hover {
-    box-shadow: var(--shadow-md);
-}
-
-/* ===== ENLACES ===== */
-a {
-    color: var(--color-primary);
-    text-decoration: none;
+.navbar ul li a {
+    color: #061B4A;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 15px;
     transition: color 0.3s ease;
 }
 
-a:hover {
-    color: var(--color-primary-dark);
+.navbar ul li a:hover {
+    color: #46C1CD;
+}
+
+.navbar .btn-contacto {
+    background-color: #72D0B6;      /* rosa principal */
+    color: #061B4A !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+    box-shadow: 0 4px 10px rgba(241, 139, 192, 0.35);
+}
+
+/* Hover */
+.navbar .btn-contacto:hover {
+    background-color: #FFCC8D;
+    color: #061B4A !important;
+    box-shadow: 0 6px 16px rgba(241, 139, 192, 0.45);
+}
+
+/* =============== HERO / BANNER =============== */
+#hero {
+    margin-top: 94px !important;
+}
+
+/* =============== CONOCENOS =============== */
+
+#conocenos .pannel-1 {
+    background-color: #FFCC8D;
+    color: #061B4A;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+#conocenos .pannel-1 h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+#conocenos .pannel-1 h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0 0;
+}
+
+.conocenos-section .containerA {
+    max-width: 100%;
+    margin: 0;
+}
+
+.conocenos-section .conocenos {
+    background-color: #46C1CD;
+    color: #061B4A;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+/* =============== EQUIPO =============== */
+
+.conocenos-section .containerA .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+}
+
+.conocenos-section .containerA .row h2 {
+    color: #061B4A;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Base sujeto */
+.conocenos-section .sujetoA,
+.conocenos-section .sujetoB {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 70%;
+}
+
+/* Imagen */
+.conocenos-section .sujetoA img,
+.conocenos-section .sujetoB img {
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Texto */
+.conocenos-section .sujetoA p,
+.conocenos-section .sujetoB p {
+    font-size: 1.1rem;
+    color: #061B4A;
+    line-height: 1.5;
+    font-weight: bold;
+}
+
+/* Ajustes individuales */
+.conocenos-section .sujetoA p {
+    margin-left: 1rem;
+}
+
+.conocenos-section .sujetoB {
+    position: relative;
+    top: -3rem;
+}
+
+.conocenos-section .sujetoB p {
+    margin-right: 1rem;
+}
+
+
+/* =============== CLASES =============== */
+
+/* Mensaje superior */
+#clases .mensaje {
+    background-color: #F18BC0;
+    color: #ffffff;
+    padding: 2.5rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Contenedor general */
+#clases .containerB {
+    max-width: 100%;
+}
+
+/* Panel superior */
+#clases .panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #72D0B6;
+    color: #061B4A;
+    padding: 1.5rem;
+}
+
+#clases .panel img {
+    width: 8rem;
+    height: auto;
+    position: relative;
+    right: 3rem;
+}
+
+#clases .panel .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clases .panel h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+#clases .panel p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    position: relative;
+    bottom: 1rem;
+}
+
+/* Grilla de clases */
+#clases .rowclas {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Card individual */
+#clases .clases-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    padding: 1rem;
+    color: #061B4A;
+}
+
+#clases .clases-panel img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2rem;
+}
+
+#clases .clases-panel h2 {
+    font-size: 1.9rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#clases .clases-panel p {
+    font-weight: 500;
+    width: 70%;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Detalles visuales */
+#IE {
+    transform: rotate(-5deg);
+}
+
+#IC {
+    transform: rotate(5deg);
+}
+
+#CE {
+    background-color: #FFCC8D;
+}
+
+
+/* =============== MODALIDADES ONLINE =============== */
+
+#modalidades-online {
+    background-color: #FFCC8D;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    color: #061B4A;
+}
+
+/* Columna izquierda */
+#modalidades-online .container1 h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+    background-color: #F6F9F2;
+    padding: 3px 8px;
+}
+
+/* Columna derecha */
+#modalidades-online .container2 h2 {
+    font-size: 2.3rem;
+    font-weight: bold;
+}
+
+#modalidades-online .container2 p {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-top: 1rem;
+}
+
+/* =============== MODALIDADES PRESENCIAL =============== */
+
+#modalidades-presencial {
+    background-color: #46C1CD;
+}
+
+/* Título principal */
+#modalidades-presencial > h2 {
+    text-align: center;
+    font-size: 2.3rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Fila de modalidades */
+#modalidades-presencial .modalidades-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* Grupo (icono + texto) */
+#modalidades-presencial .modalidades-row > div {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Columna individual */
+#modalidades-presencial .modalidades-row > div > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+/* Imágenes */
+#modalidades-presencial .modalidades-row img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 2rem;
+}
+
+/* Títulos de cada modalidad */
+#modalidades-presencial .modalidades-row h2 {
+    margin-bottom: 1rem !important;
+}
+
+/* Llamado final */
+#modalidades-presencial .container3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+
+#modalidades-presencial .container3 .cta-presencial {
+    text-align: center;
+    padding: 6px 18px;
+    background-color: #FFCC8D;
+    color: #061B4A;
+    border-radius: 10px;
+    font-size: 2.3rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+#modalidades-presencial .container3 .cta-presencial:hover {
+    background-color: #ffdba8;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* =============== RESEÑAS =============== */
+#reseñas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #061B4A;
+    margin-bottom: 1rem !important;
+}
+
+#reseñas p {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #061B4A;
+    margin-bottom: 2rem !important;
+}
+
+/* =============== RESEÑAS / SLIDER =============== */
+
+#reseñas .reseña-slider {
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Track */
+#reseñas .reseña-track {
+    position: relative;
+    min-height: 300px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Slides */
+#reseñas .reseña-slide {
+    position: absolute;
+    inset: 0;               /* ← asegura mismo tamaño */
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+#reseñas .reseña-slide.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Controles */
+#reseñas .slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Dots */
+#reseñas .slider-dots {
+    display: flex;
+    gap: 1rem;
+}
+
+#reseñas .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-azul);
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#reseñas .dot.active {
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+#reseñas .dot:hover {
+    opacity: 0.7;
+}
+
+/* Flechas */
+#reseñas .btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+#reseñas .btn-prev {
+    left: -25px;
+    background-color: #F18BC0;
+    color: #ffffff;
+}
+
+#reseñas .btn-next {
+    right: -25px;
+    background-color: #F18BC0;
+    color: #ffffff;
+}
+
+#reseñas .btn-prev:hover,
+#reseñas .btn-next:hover {
+    background-color: #eeaacd;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(241, 139, 192, 0.3);
+}
+
+/* =============== FOOTER =============== */
+footer {
+    background-color: #72D0B6;
+    color: #061B4A;
+}
+
+footer a {
+    color: #061B4A;
+}
+
+footer .container .row .col-lg-4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =============== WHATSAPP FLOATING BUTTON =============== */
+/* =============== WHATSAPP FLOAT =============== */
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    text-decoration: none;
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Ajuste mobile */
+@media (max-width: 768px) {
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        font-size: 1.9rem;
+        right: 15px;
+        bottom: 15px;
+    }
 }

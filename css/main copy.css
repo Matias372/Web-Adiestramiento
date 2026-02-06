@@ -241,25 +241,6 @@ body {
     background-color: #FFCC8D;
 }
 
-/* Botón Ver más - Clases */
-
-.btn-ver-mas {
-    display: inline-block;
-    padding: 2px 10px;
-    background-color: #061B4A;
-    color: #F6F9F2;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.btn-ver-mas:hover {
-    background-color: #405f9e;
-    color: #F6F9F2;
-}
-
-
 
 /* =============== MODALIDADES ONLINE =============== */
 
@@ -388,42 +369,6 @@ body {
 
 /* =============== RESEÑAS / SLIDER =============== */
 
-.reseñas-section {
-    background-color: #f8f9fa;
-}
-
-/* Fila */
-.reseña-row {
-    min-height: 220px;
-}
-
-/* Columna imagen */
-.reseña-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Imagen */
-.reseña-foto {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-/* Texto */
-.reseña-texto h4 {
-    margin-bottom: 0.5rem;
-}
-
-.reseña-texto p {
-    font-size: 1.1rem;
-    font-style: italic;
-    line-height: 1.5;
-    margin-bottom: 0;
-}
-
 #reseñas .reseña-slider {
     margin: 0 auto;
     position: relative;
@@ -445,13 +390,11 @@ body {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease;
-    display: flex;
 }
 
 #reseñas .reseña-slide.active {
     opacity: 1;
     pointer-events: all;
-    display: flex;
 }
 
 /* Controles */
@@ -499,7 +442,7 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
-    top: 43%;
+    top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
     z-index: 10;
@@ -577,200 +520,3 @@ footer .container .row .col-lg-4{
     }
 }
 
-/* ================================================= */
-/* =================== RESPONSIVE ================== */
-/* ================================================= */
-
-/* -------- TABLET -------- */
-@media (max-width: 992px) {
-
-    header .navbar .container .navbar-nav {
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 10px;
-    }
-
-
-
-    #hero img {
-        height: 450px;
-    }
-
-    .sujetoA,
-    .sujetoB {
-        width: 90%;
-    }
-    .conocenos-section .sujetoB {
-        top: 0rem;
-    }
-
-
-    .reseña-foto{
-        width: 150px;
-        height: 150px;
-    }
-
-    .reseña-texto p {
-        font-size: 1rem;
-        width: 80%;
-    }
-
-    .reseña-slide .row{
-        justify-content: flex-end !important;
-    }
-
-    .reseña-slide.active .row{
-        justify-content: flex-end !important;
-    }
-
-    .reseña-texto{
-        width: 70% !important;
-    }
-
-    .cta-presencial {
-        font-size: 1.6rem;
-    }
-
-    #clases .rowclas {
-        flex-direction: column;
-        padding: 0.5rem !important;
-        align-items: center;
-    }
-}
-
-/* -------- MOBILE -------- */
-@media (max-width: 768px) {
-    .navbar .btn-contacto {
-        margin: 1rem 0 0;
-    }
-
-    #hero img {
-        height: 320px;
-    }
-
-    .sujetoA,
-    .sujetoB {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .conocenos-section .sujetoB {
-        flex-direction: column-reverse;
-        top: 0rem;
-    }
-
-
-    #clases .panel {
-        flex-direction: column;
-        padding: 0.5rem !important;
-    }
-    
-    #clases .panel img{
-        right: 0px;
-    }   
-
-    .modalidades-row {
-        flex-direction: column;
-    }
-
-    .modalidades-row div {
-        width: 530px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-    }
-
-    .modalidades-row div div{
-        align-items: flex-start !important;
-    }
-
-    
-
-    #modalidades-online .container1 h2{
-        font-size: 1.5rem;
-    }
-
-    .cta-presencial {
-        font-size: 1.4rem;
-    }
-
-    .reseña-row {
-        text-align: center;
-    }
-
-    .reseña-foto {
-        width: 120px;
-        height: 120px;
-        margin-bottom: 1rem;
-    }
-
-    .reseña-img {
-        justify-content: center !important;
-    }
-
-    .reseña-texto {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        
-        width: 100% !important;
-    }
-
-    .reseña-texto p {
-        font-size: 1rem;
-    }
-  
-}
-
-/* -------- SMALL MOBILE -------- */
-@media (max-width: 480px) {
-    h2 {
-        font-size: 1.6rem;
-    }
-    h3{
-        font-size: 1.2rem;
-    }
-
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        font-size: 1.6rem;
-    }
-
-    .rowclas {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #modalidades-online{
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #modalidades-presencial .modalidades-row div{
-        width: 375px;
-    }
-
-    #modalidades-presencial .container3 a{
-        font-size: 1.2rem !important;
-    }
-
-    .reseña-img {
-        justify-content: center !important;
-    }
-
-    .btn-circle{
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-        top: 40% !important;
-    }
-
-    .btn-next {
-        right: -5px !important;
-    }
-
-    .btn-prev {
-        left: -5px !important;
-    }
-}
